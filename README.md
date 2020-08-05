@@ -4,7 +4,7 @@ This is one of the many ways to implement the GraphQL server which I found prett
 
 Instead of fighting with manually creating files for schema and resolvers, we can do that in a gently way using typescript [decorators](https://www.typescriptlang.org/docs/handbook/decorators.html) and [TypeGraphQL](https://typegraphql.com/)
 
-Take a look on this example:
+Here is an example:
 
 
 ```

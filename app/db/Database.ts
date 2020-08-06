@@ -6,13 +6,15 @@ import {
     createConnection,
     getConnectionManager
 } from 'typeorm'
-import 'envkey'
+// import 'envkey'
 
 /**
  * Database manager class
  */
 export class Database {
     private connectionManager: ConnectionManager
+
+    private CONNECTION_STRING = "mongodb+srv://admin:<admin-graphql>@cluster0.bgzjp.mongodb.net/<dbname>?retryWrites=true&w=majority"
 
     constructor() {
         this.connectionManager = getConnectionManager()
@@ -26,7 +28,6 @@ export class Database {
         if (this.connectionManager.has(CONNECTION_NAME)) {
             console.log(`Database.getConnection()-using existing connection ...`)
             connection = await this.connectionManager.get(CONNECTION_NAME)
-
             if (!connection.isConnected) {
                 connection = await connection.connect()
             }
@@ -37,6 +38,7 @@ export class Database {
             const connectionOptions: ConnectionOptions = {
                 name: `default`,
                 type: `mongodb`,
+                url: this.CONNECTION_STRING,
                 port: 5432,
                 synchronize: true,
                 logging: true,

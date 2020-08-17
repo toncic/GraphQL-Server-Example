@@ -1,38 +1,24 @@
-
-  {
-    "compilerOptions": {
-        "module": "commonjs",
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "target": "es2016",  // or newer if your node.js version supports this
-        "strictNullChecks": true,
-        "strictFunctionTypes": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noImplicitReturns": true,
-        "skipLibCheck": true,
-        "declaration": false,
-        "noFallthroughCasesInSwitch": true,
-        "composite": false,
-        "noImplicitAny": true,
-        "moduleResolution": "node",
-        "lib": ["dom", "es2016", "esnext.asynciterable"],
-        "sourceMap": true,
-        "emitDecoratorMetadata": true,
-        "strict": false,
-        "experimentalDecorators": true,
-        "outDir": "dist",
-        "rootDir": "app",
-        "baseUrl": ".",
-        "paths": {
-            "*": [
-                "node_modules/*",
-                "app/types/*"
-            ]
-        }
-    },
-    "include": [
-        "app/**/*", "./app/**/*.ts", "./app/**/*.tsx"
-    ]
+{
+  "compilerOptions": {
+    "lib": ["es2017"],
+    "removeComments": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "target": "es2017",
+    "outDir": "lib",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports":true,
+    "esModuleInterop": true
+  },
+  "include": ["./**/*.ts", "handler.ts"],
+  "exclude": [
+    "node_modules/**/*",
+    ".serverless/**/*",
+    ".webpack/**/*",
+    "_warmup/**/*",
+    ".vscode/**/*"
+  ]
 }
